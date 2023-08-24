@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			fprintf(stderr, "L%d: unkown instruction %s\n", line_number, opcode);
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 			free_stack(&head);
 			exit(EXIT_FAILURE);
 		}

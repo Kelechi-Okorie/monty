@@ -41,7 +41,7 @@ typedef struct instruction_s
 
 /**
  * struct global_var_s - global variable
- * @n: the integer to add to the stack
+ * @argument: argument for the opcode
  * @top: top of the stack
  *
  * Description: global variable for the application
@@ -59,4 +59,5 @@ void pall(stack_t **stack, unsigned int line_number);
 
 void (*getfunc(char *opcode))(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **stack);
+int is_valid_arg(char *arg);
 #endif /* MONTY_H */

@@ -16,14 +16,16 @@ void push(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 	if (!new)
 	{
-		fprintf(stderr, "Error: malloc failed");
+		fflush(stdout);
+		fprintf(stderr, "Error: malloc failed\n");
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
 
-	if (global_var.argument == NULL)
+	if (global_var.argument == NULL || !is_valid_arg(global_var.argument))
 	{
-		fprintf(stderr, "L%d: usage: push integer", line_number);
+		fflush(stdout);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
