@@ -61,6 +61,7 @@ int main(int argc, char **argv)
 		}
 		else
 		{
+			fflush(stdout);
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 			free_stack(&head);
 			exit(EXIT_FAILURE);
