@@ -61,7 +61,9 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			fprintf(stderr, "Encounterd an error, opcode does not exits");
+			fprintf(stderr, "L%d: unkown instruction %s\n", line_number, opcode);
+			free_stack(&head);
+			exit(EXIT_FAILURE);
 		}
 	}
 
