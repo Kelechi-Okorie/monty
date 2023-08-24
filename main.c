@@ -59,7 +59,8 @@ int main(int argc, char **argv)
 		if (f)
 		{
 			f(&head, line_number);
-			break;
+			if (global_var.exit_status == 1)
+				break;
 		}
 		else
 		{
@@ -73,6 +74,8 @@ int main(int argc, char **argv)
 	fclose(stream);
 	free_stack(&head);
 	free(lineptr);
+	if (global_var.exit_status == 1)
+		exit(EXIT_FAILURE);
 
 	return (0);
 }
