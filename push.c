@@ -20,9 +20,15 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	n = atoi(argument);
+	if (global_var.argument == NULL)
+	{
+		dprintf(2, "L%d: usage: push integer", line_number);
+		exit(EXIT_FAILURE);
+	}
 
-	new->n = global_var.n;
+	n = atoi(global_var.argument);
+
+	new->n = n;
 	new->next = NULL;
 	new->prev = NULL;
 
