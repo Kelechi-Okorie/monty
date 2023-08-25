@@ -59,6 +59,7 @@ extern global_var_t global_var;
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 
 void (*getfunc(char *opcode))(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **stack);

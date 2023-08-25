@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 		if (opcode == NULL)
 			continue;
 
-		if (strcmp(opcode, "pall") != -1)
+		if (strcmp(opcode, "pall") != 0)
 			argument = strtok(NULL, delims);
 
 		global_var.argument = argument;
