@@ -19,15 +19,18 @@ void push(stack_t **stack, unsigned int line_number)
 		fflush(stdout);
 		fprintf(stderr, "Error: malloc failed\n");
 		free_stack(stack);
-		exit(EXIT_FAILURE);
+		global_var.exit_status = 1;
+		return;
 	}
 
 	if (global_var.argument == NULL || !is_valid_arg(global_var.argument))
 	{
 		fflush(stdout);
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free(new);
 		free_stack(stack);
-		exit(EXIT_FAILURE);
+		global_var.exit_status = 1;
+		return;
 	}
 
 	n = atoi(global_var.argument);

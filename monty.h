@@ -43,6 +43,7 @@ typedef struct instruction_s
  * struct global_var_s - global variable
  * @argument: argument for the opcode
  * @top: top of the stack
+ * @exit_status: the exit status of the current function
  *
  * Description: global variable for the application
  */
@@ -50,6 +51,7 @@ typedef struct global_var_s
 {
 	char *argument;
 	stack_t *top;
+	int exit_status;
 } global_var_t;
 
 extern global_var_t global_var;

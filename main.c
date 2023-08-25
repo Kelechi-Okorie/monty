@@ -27,6 +27,7 @@ int main(int argc, char **argv)
 	line_len = nread = 0;
 	lineptr = opcode = argument = NULL;
 	line_number = 0;
+	global_var.exit_status = 0;
 
 	if (argc != 2)
 	{
@@ -58,6 +59,8 @@ int main(int argc, char **argv)
 		if (f)
 		{
 			f(&head, line_number);
+			if (global_var.exit_status == 1)
+				break;
 		}
 		else
 		{
@@ -67,6 +70,12 @@ int main(int argc, char **argv)
 			exit(EXIT_FAILURE);
 		}
 	}
+
+	fclose(stream);
+	free_stack(&head);
+	free(lineptr);
+	if (global_var.exit_status == 1)
+		exit(EXIT_FAILURE);
 
 	return (0);
 }

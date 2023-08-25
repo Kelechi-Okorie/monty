@@ -16,7 +16,7 @@ void free_stack(stack_t **stack)
 	while (p)
 	{
 		temp = p->next;
-		free(temp);
+		free(p);
 		p = temp;
 	}
 
