@@ -28,7 +28,7 @@ void push(stack_t **stack, unsigned int line_number)
 		fflush(stdout);
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free(new);
-		free_stack(stack);
+	/*	free_stack(stack); */
 		global_var.exit_status = 1;
 		return;
 	}
