@@ -14,7 +14,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	stack_t *second, *temp;
 
 	(void)stack;
-	
+
 	first = global_var.top;
 	second = global_var.top->prev;
 	temp = first;
