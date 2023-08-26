@@ -10,6 +10,7 @@
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp;
 
 	if (global_var.top == NULL)
 	{
@@ -20,6 +21,10 @@ void pop(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
+	temp = global_var.top;
 	global_var.top = global_var.top->prev;
+	if (global_var.top)
+		global_var.top->next = NULL;
+	free(temp);
 
 }

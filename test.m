@@ -1,5 +1,2 @@
-
-
-push
-
-
+push 2
+pop
