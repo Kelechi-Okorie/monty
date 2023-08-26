@@ -25,6 +25,8 @@ void pop(stack_t **stack, unsigned int line_number)
 	global_var.top = global_var.top->prev;
 	if (global_var.top)
 		global_var.top->next = NULL;
+	else
+		*stack = NULL;
 	free(temp);
 
 }
